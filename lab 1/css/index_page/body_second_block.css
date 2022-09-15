@@ -1,0 +1,40 @@
+#second_block {
+    display: flex;
+    flex-direction: row;
+    width: 1100px;
+    height: auto;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-top: 241px;
+}
+
+#second_block img {
+    object-fit: cover;
+    width: 470px;
+    height: 500px;
+    border-radius: 42px;
+}
+
+#second_block_text {
+    margin-left: 100px;
+}
+
+#second_block_text h3 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1E1C31;
+}
+
+#second_block_text h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 48px;
+    color: #1E1C31;
+}
+
+#second_block_text p {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+}
