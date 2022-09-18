@@ -7,9 +7,16 @@ body {
     overflow-x: hidden;
 }
 
+.linear_gradient_area {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(49.08deg, rgba(65, 88, 208, 0.5) 3.31%, rgba(200, 80, 192, 0.5) 57.52%, rgba(255, 204, 112, 0.5) 91.12%);
+  filter: blur(150px);
+}
+
 #content {
     width: 100%;
-    height: 3257px;
     display: flex;
     flex-direction: column;
     align-items: center;

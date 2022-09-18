@@ -1,3 +1,32 @@
-#main_info_block {
-    
+.new_block {
+    display: flex;
+    flex-direction: row;
+    width: 1300px;
+    height: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.image_style {
+    width: 470px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+.text_in_card {
+    margin: 40px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+#news_header_share_block {
+    display: flex; 
+    flex-direction: column; 
+    margin-top: 100px;
+    width: auto;
+}
+
+#news_header_share_block img {
+    width: 28px;
+    height: 28px;
 }
