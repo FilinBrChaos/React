@@ -1,0 +1,39 @@
+.climbing_type_card {
+    width: 338px;
+    height: auto;
+    margin-top: 50px;
+    display: flex; 
+    flex-direction: row;
+}
+
+.climbing_type_card__title {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+}
+
+.climbing_type_card__description {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 14px;
+    color: rgba(30, 28, 49, 0.5);
+}
+
+.climbing_type_card__icon_frame {
+    /* padding: 30px; */
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 18px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.climbing_type_card__icon {
+    width: 80px;
+    height: 80px;
+}

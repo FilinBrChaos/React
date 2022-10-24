@@ -1,0 +1,36 @@
+.news_card {
+    display: flex;
+    flex-direction: column;
+    width: 361px;
+}
+
+.news_card img {
+    width: 361px;
+    height: 241px;
+    border-radius: 24px;
+}
+
+.news_card a {
+    margin-top: 17px;
+    margin-inline: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.news_card__info {
+    margin-inline: 20px;
+    margin-bottom: 0;
+    margin-top: 29px;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgba(30, 28, 49, 0.6);
+}
+
+.news_card__description {
+    margin-inline: 20px;
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1E1C31;
+}

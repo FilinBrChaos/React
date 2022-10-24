@@ -1,0 +1,126 @@
+.big_page_component {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+}
+
+.big_page_component_right_direction {
+    flex-direction: row;
+}
+
+.big_page_component_left_direction {
+    flex-direction: row-reverse;
+}
+
+.big_page_component_big {
+    margin-top: 107px;
+    width: 1300px;
+}
+
+.big_page_component_small {
+    margin-top: 241px;
+    width: 1100px;
+}
+
+.big_page_component__info_block {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-right: 20px;
+}
+
+.big_page_component__info_block_right {
+    display: flex;
+    margin-left: 100px;
+    flex-direction: column;
+    width: auto;
+}
+
+.big_page_component__small_title {
+    color: #1E1C31; 
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+
+.big_page_component__medium_title {
+    margin-top: 15px;
+    color: #1E1C31;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+
+.big_page_component__title {
+    margin-top: 15px;
+    color: #1E1C31;
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.big_page_component__title_light {
+    margin-top: 15px;
+    color: #1E1C31;
+    font-weight: 600;
+    font-size: 48px;
+}
+
+
+.big_page_component__light_description {
+    margin-top: 63px; 
+    color: #1E1C3199;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.big_page_component__light_description_light {
+    margin-top: 63px; 
+    color: #1E1C3199;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+.big_page_component__description {
+    margin-top: 63px; 
+    font-weight: 400;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.big_page_component__date {
+    margin-top: 15px;
+}
+
+.big_page_component__image_block {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+.big_page_component__image1 {
+    width: 400px; 
+    height: 550px;
+    border-radius: 18px;
+    object-fit: cover;
+}
+
+.big_page_component__image1_big {
+    object-fit: cover;
+    width: 470px;
+    height: 500px;
+    border-radius: 42px;
+}
+
+.big_page_component__image2 {
+    width: 150px; 
+    height: 550px; 
+    margin-left: 20px;
+    border-radius: 18px;
+    object-fit: cover;
+}
+
+.hidden {
+    visibility: hidden;
+}
