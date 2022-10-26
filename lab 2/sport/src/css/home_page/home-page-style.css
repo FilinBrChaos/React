@@ -38,12 +38,13 @@
     margin-bottom: 80px;
 }
 
-#first_block__button {
+.first_block__button {
     height: 49px;
+    width: 200px;
+    margin-top: 81px;
     border-radius: 15px;
     border-width: 0;
     background-color: #4270EC;
-    margin-top: 81px;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
@@ -51,7 +52,7 @@
     padding-inline: 40px;
 }
 
-#first_block__button:hover {
+.first_block__button:hover {
     height: 49px;
     border-radius: 15px;
     border-width: 0;

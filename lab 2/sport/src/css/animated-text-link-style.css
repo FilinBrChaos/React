@@ -1,0 +1,13 @@
+.regular_link {
+    color: #1E1C31;
+    margin-left: 41px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.checked_link {
+    color: #4270EC;
+    margin-left: 41px;
+    font-weight: 600;
+    font-size: 14px;
+}

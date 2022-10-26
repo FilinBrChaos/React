@@ -1,19 +1,24 @@
+import React from 'react';
 import '../css/header.css'
 import '../index.css'
-const headerIcon2 = require("../icons/global_icons/web-page-icon.png")
+const web_page_icon = require("../icons/global_icons/web-page-icon.png")
 
-export function Header(){
+interface HeaderProps {
+    links: React.ReactNode[]
+}
+
+export function Header(props: HeaderProps){
     return(
         <header className="header">
-            <img className="web_page_icon" src={headerIcon2}/>
+            <img className="web_page_icon" src={web_page_icon}/>
             <ul className="horizontal_list">
-                <li><a className="hover-underline-animation header__link" href="#">Home</a></li>
-                <li><a className="hover-underline-animation header__link" href="#">About us</a></li>
-                <li><a className="hover-underline-animation header__link" href="#">Portfolio</a></li>
-                <li><a className="hover-underline-animation header__link" href="#">Testimony</a></li>
-                <li><a className="hover-underline-animation header__link" href="#">News</a></li>
-                <li><a className="hover-underline-animation header__link" href="#">Contact us</a></li>
+                {ParseIntoList(props.links)}
             </ul>
         </header>
     );
+}
+
+function ParseIntoList(links: React.ReactNode[]) {
+    let result = links.map(link => <li>{link}</li>)
+    return result
 }

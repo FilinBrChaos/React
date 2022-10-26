@@ -8,7 +8,6 @@ import { Footer } from './components/footer';
 function App() {
   return (
     <Router>
-        <Header></Header>
         <div className='content'>
           <Routes>
             <Route path="/" element={<HomePage></HomePage>}/>
