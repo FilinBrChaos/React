@@ -1,0 +1,8 @@
+.HomePage {
+    display: flex;
+    justify-content: center;
+}
+
+.HomePage-Content {
+    width: 1024px;
+}

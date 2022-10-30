@@ -1,0 +1,38 @@
+.ColorPicker {
+    width: 100vw;
+    height: 100vh;
+}
+
+.ColorPicker-Header {
+    width: 98%;
+    height: 5%;
+    padding-inline: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.ColorPicker-TextStyle {
+    font-size: 18px;
+    font-weight: 600;
+    text-indent: 2px;
+    letter-spacing: .55px;
+}
+
+.ColorPicker-Palette {
+    height: 90%;
+}
+
+.ColorPicker-Footer {
+    height: 5%;
+    bottom: 0;
+    width: 98%;
+    padding-inline: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: white;
+}
