@@ -1,6 +1,8 @@
 import '../../css/home-page/color-palette-card-style.css'
 import { Link } from 'react-router-dom'
 import { Palette } from '../palette'
+import { useState } from 'react'
+
 
 interface ColorPaletteCardProps {
     title: string
@@ -14,7 +16,7 @@ export function ColorPaletteCard(props: ColorPaletteCardProps){
             <div className="ColorPaletteCard">
                 <div>
                     <div className='ColorPaletteCard-Palette'>
-                        <Palette columns={5} rowHeight="37.75px" colors={props.colors} functionality={false}></Palette>
+                        <Palette columns={5} rowHeight="37.75px" colors={props.colors} functionality={false} hexType={0}></Palette>
                     </div>
                     <div className='ColorPaletteCard-TitleBlock'>
                         <p className='ColorPaletteCard-Title'>{props.title}</p>
