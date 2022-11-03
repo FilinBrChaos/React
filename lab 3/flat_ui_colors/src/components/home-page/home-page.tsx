@@ -3,9 +3,11 @@ import { ColorPaletteCard } from './color-palette-card'
 import { HomeHeader } from './home-header'
 import data from '../../data/pallete.json'
 import { Grid } from '@mui/material'
+import { HomeFooter } from './home-footer'
 
 export function HomePage(){
     let key = 0
+
     return(
         <div>
             <HomeHeader></HomeHeader>
@@ -22,6 +24,7 @@ export function HomePage(){
                     </Grid>
                 </div>
             </div>
+            <HomeFooter></HomeFooter>
         </div>
     )
 }

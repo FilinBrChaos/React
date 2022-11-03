@@ -4,12 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FullscreenPopup } from './color-picker/fullscreen-popup'
 import { useState, useEffect } from 'react'
 import useSound from 'use-sound'
+import { fullscreenPopupGreetingsArr } from '../data/constants'
 const mySound = require("../data/copied.mp3")
 
 interface PaletteProps{
     columns: number
     rowHeight: string
     colors: {name: string, value: string}[]
+    soundState?: boolean
     functionality?: boolean
     hexType: number
 }
@@ -19,7 +21,7 @@ export function Palette(props: PaletteProps){
     const [colorValue, setColorValue] = useState("")
     const [copyedColor, setCopiedColor] = useState("")
 
-    const greetings = ["PASTE ME!", "IT'LL ROCK!", "RIGHT ONE!", "WILL DO!", "COPIED!", "GOT IT!"]
+    const greetings = fullscreenPopupGreetingsArr
     const [playSound] = useSound(mySound)
 
     useEffect(() => {
@@ -46,7 +48,7 @@ export function Palette(props: PaletteProps){
                                         setShowPopup(true); 
                                         setColorValue(color.value); 
                                         setCopiedColor(copyedColor)
-                                        playSound()
+                                        if (props.soundState) playSound()
                                         navigator.clipboard.writeText(copyedColor)}}
                                     className='Palette-Button'>COPY</motion.button>
                                    
@@ -93,7 +95,7 @@ function hexToRgbA(hex: string){
             c= [c[0], c[0], c[1], c[1], c[2], c[2]];
         }
         let b: number = parseInt('0x'+c.join(''), 16);
-        return 'rgba('+[(b>>16)&255, (b>>8)&255, b&255].join(',')+',1)';
+        return [(b>>16)&255, (b>>8)&255, b&255].join(',')+',1';
     }
     throw new Error('Bad Hex');
 }
