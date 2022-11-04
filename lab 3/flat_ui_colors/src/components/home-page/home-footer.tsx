@@ -1,4 +1,4 @@
-import { moreFooterLinksNames, moreTitle, shareFooterLinksNames, shareTitle, descriptionTitle, footerDescriptionText } from "../../data/constants";
+import { moreFooterLinksNames, moreTitle, shareFooterLinksNames, shareTitle, descriptionTitle, footerDescriptionText } from "../../constants/constants";
 import { FooterLinksBlock } from "./footer-links-block";
 
 

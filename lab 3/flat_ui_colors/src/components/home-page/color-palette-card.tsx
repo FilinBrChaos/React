@@ -1,26 +1,25 @@
 import '../../css/home-page/color-palette-card-style.css'
 import { Link } from 'react-router-dom'
 import { Palette } from '../palette'
-import { useState } from 'react'
-
+import data from '../../data/pallete.json'
 
 interface ColorPaletteCardProps {
-    title: string
-    emoji: string
-    colors: { name: string, value: string}[]
+    id: number
 }
 
 export function ColorPaletteCard(props: ColorPaletteCardProps){
+    const card = data[props.id]
+    const colors = card.colors.map(item => ({name: item.name, value: item.color}))
     return(
-         <Link to="/picker" state={{card: {title: props.title, emoji: props.emoji, colors: props.colors}}} className='ColorPaletteCard-Link'>
+         <Link to={`/picker/${props.id}`} className='ColorPaletteCard-Link'>
             <div className="ColorPaletteCard">
                 <div>
                     <div className='ColorPaletteCard-Palette'>
-                        <Palette columns={5} rowHeight="37.75px" colors={props.colors} functionality={false} hexType={0}></Palette>
+                        <Palette columns={5} rowHeight="37.75px" colors={colors} hexType={0}></Palette>
                     </div>
                     <div className='ColorPaletteCard-TitleBlock'>
-                        <p className='ColorPaletteCard-Title'>{props.title}</p>
-                        <p>{props.emoji}</p>
+                        <p className='ColorPaletteCard-Title'>{card.paletteName}</p>
+                        <p>{card.emoji}</p>
                     </div>
                 </div>
             </div>

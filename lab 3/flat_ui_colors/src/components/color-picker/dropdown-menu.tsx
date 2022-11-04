@@ -1,5 +1,4 @@
 import { Menu } from '@headlessui/react'
-import { Fragment, useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 interface DropdownMenuProps {
@@ -8,7 +7,6 @@ interface DropdownMenuProps {
 }
 
 export function DropdownMenu(props: DropdownMenuProps){
-    let key = 0
     return(
         <div>
             <Menu as="div" className="relative inline-block text-left">
@@ -20,7 +18,7 @@ export function DropdownMenu(props: DropdownMenuProps){
                     <Menu.Items className="absolute top-44 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 origin-center">
                         <motion.div className="bg-white shadow-lg rounded overflow-hidden"
                         animate={{scaleX: [0.8, 1.05, 1], scaleY: [0.6, 1.1, 0.9, 1], transition:{duration:0.6}}}>
-                            {props.buttons.map(button => <DropdownMenuButton id={key++} title={button.title} onClick={button.onClick}></DropdownMenuButton>)}
+                            {props.buttons.map((button, index) => <DropdownMenuButton id={index} key={index} title={button.title} onClick={button.onClick}></DropdownMenuButton>)}
                         </motion.div>
                     </Menu.Items>
             </Menu>

@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FullscreenPopup } from './color-picker/fullscreen-popup'
 import { useState, useEffect } from 'react'
 import useSound from 'use-sound'
-import { fullscreenPopupGreetingsArr } from '../data/constants'
-const mySound = require("../data/copied.mp3")
+import { fullscreenPopupGreetingsArr } from '../constants/constants'
+const mySound = require("../assets/copied.mp3")
 
 interface PaletteProps{
     columns: number
@@ -32,24 +32,27 @@ export function Palette(props: PaletteProps){
             return () => clearTimeout(timer)
         }
     }, [showPopup])
-    let key = 0
+
+    const handleCopyColorClick = (copiedColor: string) => {
+        let copyedColor = convertCopiedColor(copiedColor, props.hexType)
+        setShowPopup(true); 
+        setColorValue(copiedColor)
+        setCopiedColor(copyedColor)
+        if (props.soundState) playSound()
+        navigator.clipboard.writeText(copyedColor)
+    }
+
     return(
         <div>
             <Grid container columns={props.columns}>
-                {props.colors.map((color) =>
-                    <Grid item xs={1} key={key++}>
+                {props.colors.map((color, index) =>
+                    <Grid item xs={1} key={index}>
                         <div style={{backgroundColor: color.value, height: props.rowHeight}}>
                             <div className={props.functionality ? 'PaletteFunctionality' : 'Hidden'}>
                                 <div className='Palette-ButtonWraper hide-animation'>
                                     <motion.button whileHover={{rotate: [0, 10, -10, 5, -5, 0], transition: { duration: 0.5 }}} 
                                     whileTap={{scale: 0.9, transition: { duration: 0.05 }}}
-                                    onClick={() => {
-                                        let copyedColor = getCopiedColor(color.value, props.hexType)
-                                        setShowPopup(true); 
-                                        setColorValue(color.value); 
-                                        setCopiedColor(copyedColor)
-                                        if (props.soundState) playSound()
-                                        navigator.clipboard.writeText(copyedColor)}}
+                                    onClick={() => {handleCopyColorClick(color.value)}}
                                     className='Palette-Button'>COPY</motion.button>
                                    
                                 </div>
@@ -70,7 +73,7 @@ function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
 }
 
-function getCopiedColor(color: string, hexType: number){
+function convertCopiedColor(color: string, hexType: number){
     let resultColor: string = ""
     switch (hexType){
         case 0: resultColor = color; break
@@ -95,7 +98,7 @@ function hexToRgbA(hex: string){
             c= [c[0], c[0], c[1], c[1], c[2], c[2]];
         }
         let b: number = parseInt('0x'+c.join(''), 16);
-        return [(b>>16)&255, (b>>8)&255, b&255].join(',')+',1';
+        return "rgba(" + [(b>>16)&255, (b>>8)&255, b&255].join(',')+',1)';
     }
     throw new Error('Bad Hex');
 }
