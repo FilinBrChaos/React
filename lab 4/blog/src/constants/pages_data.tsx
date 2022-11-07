@@ -1,0 +1,2 @@
+export const webPageLogo = {title: "Untitled UI", icon: require("../assets/icons/main_header_icon.png")}
+export const burgerMenuStates = {general: require("../assets/icons/burger_menu.png"), active: require("../assets/icons/burger_menu_active.png")}
