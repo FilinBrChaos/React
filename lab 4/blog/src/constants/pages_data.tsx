@@ -7,6 +7,9 @@ export const headerLinks = [{title: "Home", link: "/"},
 
 export const logIn = "Log in"
 export const signUp = "Sign up"
+export const readPost = "Read post"
+export const next = "Next"
+export const previous = "Previous"
 
 export const homePageSubHeaderTextData = {subTitle: "Resources", title: "Untitled blog", 
 description: "Tool and strategies modern teams need to help their companies grow.",
