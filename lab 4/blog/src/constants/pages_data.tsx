@@ -1,4 +1,4 @@
-export const webPageLogo = {title: "Untitled UI", icon: require("../assets/icons/main_header_icon.png")}
+export const webPageLogo = {title: "Untitled UI", icon: require("../assets/icons/main_header_icon.png"), iconLight: require("../assets/icons/main_header_icon_light.png")}
 
 export const headerLinks = [{title: "Home", link: "/"},
                             {title: "Products", subLinks: [{title: "prodSub1", link: "#"}, {title: "prodSub2", link: "#"}]},
@@ -18,3 +18,19 @@ provacyPolicyLink: <a href="#" className=" underline">privacy policy</a>,
 buttonTitle: "Get started"}
 
 export const search = "Search"
+
+export const homeFooterLinks = [{title: "Overview", link: "#"},
+                                {title: "Features", link: "#"},
+                                {title: "Pricing", link: "#"},
+                                {title: "Careers", link: "#"},
+                                {title: "Help", link: "#"},
+                                {title: "Privacy", link: "#"}]
+
+export const stayUpToDate = "Stay up to date"
+export const enterYourEmail = "Enter your email"
+export const subscribe = "Subscribe"
+
+export const termsPrivacyCookiesLinks = [{title: "Terms", link: "#"},
+                                         {title: "Privacy", link: "#"},
+                                         {title: "Cookies", link: "#"}]
+export const allRightsReserved = "© 2077 Untitled UI. All rights reserved."
