@@ -9,24 +9,24 @@ interface CardPagesSwitcherProps {
 
 export function CardPagesSwitcher(props: CardPagesSwitcherProps){
     const range = 2
-    let numberButtonsString = []
+    let numberButtonsRow = []
 
     if (props.currentPage - range >= 2) {                       //it's (1...) part
-        numberButtonsString.push(<NumberButton index={1} checked={false} setCurrentPage={props.setCurrentPage}></NumberButton>)
-        if (props.currentPage - range > 2) numberButtonsString.push(<p className=" self-end w-3">...</p>)
+        numberButtonsRow.push(<NumberButton index={1} checked={false} setCurrentPage={props.setCurrentPage}></NumberButton>)
+        if (props.currentPage - range > 2) numberButtonsRow.push(<p className=" self-end w-3">...</p>)
     }
 
     for (let i = props.currentPage - range; i < props.currentPage && i < props.maxPage; i++)        //it's (4 5) part
-        if (i > 0) numberButtonsString.push(<NumberButton index={i} checked={false} setCurrentPage={props.setCurrentPage}></NumberButton>)
+        if (i > 0) numberButtonsRow.push(<NumberButton index={i} checked={false} setCurrentPage={props.setCurrentPage}></NumberButton>)
 
-    numberButtonsString.push(<NumberButton index={props.currentPage} checked={true} setCurrentPage={props.setCurrentPage}></NumberButton>)  //it's ([6]) - current checked page
+    numberButtonsRow.push(<NumberButton index={props.currentPage} checked={true} setCurrentPage={props.setCurrentPage}></NumberButton>)  //it's ([6]) - current checked page
 
     for (let i = props.currentPage + 1; i < props.currentPage + range + 1 && i <= props.maxPage; i++)       //it's (7 8) part
-        numberButtonsString.push(<NumberButton index={i} checked={false} setCurrentPage={props.setCurrentPage}></NumberButton>)
+        numberButtonsRow.push(<NumberButton index={i} checked={false} setCurrentPage={props.setCurrentPage}></NumberButton>)
 
     if (props.currentPage + range <= props.maxPage - 1){        //it's (...10) part
-        if (props.currentPage + range < props.maxPage - 1) numberButtonsString.push(<p className=" self-end w-3">...</p>)
-        numberButtonsString.push(<NumberButton index={props.maxPage} checked={false} setCurrentPage={props.setCurrentPage}></NumberButton>)
+        if (props.currentPage + range < props.maxPage - 1) numberButtonsRow.push(<p className=" self-end w-3">...</p>)
+        numberButtonsRow.push(<NumberButton index={props.maxPage} checked={false} setCurrentPage={props.setCurrentPage}></NumberButton>)
     }
 
     const previousClickHandler = () => {
@@ -50,7 +50,7 @@ export function CardPagesSwitcher(props: CardPagesSwitcherProps){
                 <p>Page {props.currentPage} of {props.maxPage}</p>
             </div>
             <div className="hidden lg:flex lg:flex-row">
-                {numberButtonsString}
+                {numberButtonsRow}
             </div>
             <button className="flex flex-row items-center border-[#D0D5DD] border py-2 px-3 rounded-lg" onClick={nextClickHandler}>
                 <p className=" mr-3 text-sm font-semibold hidden lg:flex">{next}</p>

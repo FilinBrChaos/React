@@ -1,7 +1,7 @@
 export const webPageLogo = {title: "Untitled UI", icon: require("../assets/icons/main_header_icon.png"), iconLight: require("../assets/icons/main_header_icon_light.png")}
 
 export const headerLinks = [{title: "Home", link: "/"},
-                            {title: "Products", subLinks: [{title: "prodSub1", link: "#"}, {title: "prodSub2", link: "#"}]},
+                            {title: "Categories", link: "/categories"},
                             {title: "Resources", subLinks: [{title: "resSub1", link: "#"}, {title: "resSub2", link: "#"}]},
                             {title: "Pricing", link: "#"}]
 
@@ -19,6 +19,8 @@ buttonTitle: "Get started"}
 
 export const search = "Search"
 
+export const homePageSortDropdownButtonsTitles = ["Newest first", "Oldest first", "Alphabet", "Reverse"]
+
 export const homeFooterLinks = [{title: "Overview", link: "#"},
                                 {title: "Features", link: "#"},
                                 {title: "Pricing", link: "#"},
@@ -34,3 +36,11 @@ export const termsPrivacyCookiesLinks = [{title: "Terms", link: "#"},
                                          {title: "Privacy", link: "#"},
                                          {title: "Cookies", link: "#"}]
 export const allRightsReserved = "© 2077 Untitled UI. All rights reserved."
+
+
+export const ourBlog = "Our blog"
+export const categoriesPageSubHeaderTitle = "Resources and insights"
+export const categoriesPageSubHeaderDescription = "The latest industry news, interviews, technologies, and resources."
+
+export const blogCategories = "Blog categories"
+export const viewAll = "View all"
