@@ -5,13 +5,13 @@ interface CategoriesPageCategoriesSideSelectorProps {
     categoriesList: string[]
     selected: string
     setSelected: React.Dispatch<React.SetStateAction<string>>
+    onSelectedChanged?: VoidFunction
 }
 
 export function CategoriesPageCategoriesSideSelector(props: CategoriesPageCategoriesSideSelectorProps){
-    //const [selected, setSelected] = useState(props.categoriesList[0])
     return(
         <div className="w-full">
-            <RadioGroup value={props.selected} onChange={props.setSelected} className="w-full">
+            <RadioGroup value={props.selected} onChange={(arg) => { props.setSelected(arg); if (props.onSelectedChanged) props.onSelectedChanged() }} className="w-full">
                 {props.categoriesList.map((category, index) => (
                 <RadioGroup.Option
                     key={index}

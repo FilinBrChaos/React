@@ -26,8 +26,8 @@ export function HomePageBlogCardRounded(props: HomePageBlogCardRoundedProps){
                     <p>{props.card.tegs.split(',')[0]}</p>
                 </div>
             </div>
-            <div className="px-6 py-8 flex flex-col h-full text-start">
-                <p className="text-xl lg:text-2xl font-semibold first-letter:capitalize text-[#101828]">{props.card.title}</p>
+            <div className="w-full px-6 py-8 flex flex-col h-full text-start">
+                <p className="w-full text-xl lg:text-2xl font-semibold text-ellipsis truncate first-letter:capitalize text-[#101828]">{props.card.title}</p>
                 <p className="mt-2 text-base font-normal first-letter:capitalize text-[#475467]">{props.card.short_description}</p>
                 <p className="flex flex-row items-center mt-6 text-[#6941C6] text-base font-semibold">{readPost} <img src={require("../assets/icons/diagonal-arrow.png")} alt="" className="ml-2 w-4 h-4"/></p>
             </div>

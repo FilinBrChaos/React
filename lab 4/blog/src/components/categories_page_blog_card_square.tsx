@@ -23,7 +23,7 @@ export function CategoriesPageBlogCardSquare(props: CategoriesPageBlogCardSquare
                 </div>
 
                 <div className="flex flex-row justify-between items-start">
-                    <p className={"font-semibold text-start first-letter:capitalize" + (props.extended ? " text-3xl" : " text-xl lg:text-2xl")}>{props.card.title}</p>
+                    <p className={"font-semibold text-start truncate first-letter:capitalize" + (props.extended ? " text-3xl" : " text-xl lg:text-2xl")}>{props.card.title}</p>
                     <img src={require("../assets/icons/next.png")} alt="" className={props.extended ? "hidden" : "w-5 h-5 -rotate-45"}/>
                 </div>
 

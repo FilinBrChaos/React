@@ -4,26 +4,29 @@ import { HomePageSubHeader } from "./home_page_subheader";
 import { Navbar } from "./navbar";
 import cards from '../data/blogs_data.json'
 import { CardPagesSwitcher } from "./card_pages_switcher";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { HomeFooter } from "./home_footer";
 import { DropdownOptions } from "./dropdown_options";
+import { HomePageInputField } from "./home_page_input_field";
 
 export function HomePage(){
     const [currentPage, setCurrentPage] = useState(1)
     const [sortPattern, setSortPattern] = useState(homePageSortDropdownButtonsTitles[0])
+    const [searchPattern, setSearchPattern] = useState("")
 
     let renderedCards = useMemo(() => {
-        compareDates(cards[30].date, cards[1].date);
+        let result = cards
+        if (searchPattern != "") result = cards.filter((card) => card.title.includes(searchPattern))
 
         switch (sortPattern) {
-            case homePageSortDropdownButtonsTitles[0]: cards.sort((a, b) => compareDates(a.date, b.date)); break;
-            case homePageSortDropdownButtonsTitles[1]: cards.sort((a, b) => (-1) * compareDates(a.date, b.date)); break;
-            case homePageSortDropdownButtonsTitles[2]: cards.sort((a, b) => a.title > b.title ? 1 : (a.title < b.title ? -1 : 0)); break;
-            case homePageSortDropdownButtonsTitles[3]: cards.sort((a, b) => a.title < b.title ? 1 : (a.title > b.title ? -1 : 0)); break;
+            case homePageSortDropdownButtonsTitles[0]: result.sort((a, b) => (-1) * compareDates(a.date, b.date)); break;
+            case homePageSortDropdownButtonsTitles[1]: result.sort((a, b) => compareDates(a.date, b.date)); break;
+            case homePageSortDropdownButtonsTitles[2]: result.sort((a, b) => a.title > b.title ? 1 : (a.title < b.title ? -1 : 0)); break;
+            case homePageSortDropdownButtonsTitles[3]: result.sort((a, b) => a.title < b.title ? 1 : (a.title > b.title ? -1 : 0)); break;
         }
         setCurrentPage(1)           //???
-        return cards
-    }, [sortPattern])
+        return result
+    }, [sortPattern, searchPattern])
 
     const cardsOnPage = 8
     const pages = Math.floor(renderedCards.length / cardsOnPage) + 1
@@ -39,7 +42,7 @@ export function HomePage(){
             <HomePageSubHeader></HomePageSubHeader>
             <div className="w-full mb-16 pt-16 px-4 lg:py-24 lg:px-28">
                 <div className="flex flex-col lg:flex-row lg:justify-between">
-                    <input type="text" className="w-full lg:w-[280px] h-11 rounded-lg border-[#D0D5DD] border-[1px] p-[14px]" placeholder={search}/>
+                    <HomePageInputField onSubmit={setSearchPattern} placeholder={search} style="w-full lg:w-[280px] h-11 rounded-lg border-[#D0D5DD] border-[1px] p-[14px]"></HomePageInputField>
                     <DropdownOptions title="Order by" options={dropdownOptions} additionalStyle={"w-full lg:w-[280px] h-11 mt-7 lg:mt-0"}></DropdownOptions>
                 </div>
                 <div className="w-full mt-12 sm:grid sm:grid-cols-2 2xl:grid-cols-3 sm:gap-5">
